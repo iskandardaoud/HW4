@@ -1,6 +1,6 @@
-from shape import Shape
+from shape import shape
 
-class Circle(Shape):
+class circle(shape):
     def __init__(self, x, y, size):
         super().__init__(x, y, size)
 
