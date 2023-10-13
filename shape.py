@@ -1,3 +1,4 @@
+# shape.py
 class Shape:
     def __init__(self, x, y, size):
         self.x = x
