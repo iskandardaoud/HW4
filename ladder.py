@@ -1,38 +1,23 @@
-def merge_list(list1, list2):
-    # Check if the input is valid lists
-    if not (isinstance(list1, list) and isinstance(list2, list)):
-        raise TypeError("Both inputs must be lists")
+def my_steps(n):
+    if not (1 <= n <= 25):
+        raise ValueError("Input is out of bounds. Please provide an integer between 1 and 25.")
 
-    # Function to merge and sort two lists
-    def merge_and_sort(left, right):
-        sorted_list = []
-        i = j = 0
+    if n <= 2:
+        return n
+    else:
+        # Initialize a list to store the number of ways to reach each step.
+        ways = [0] * (n + 1)
+        ways[1] = 1  # There's one way to reach the first step.
+        ways[2] = 2  # There are two ways to reach the second step.
 
-        while i < len(left) and j < len(right):
-            if left[i] < right[j]:
-                sorted_list.append(left[i])
-                i += 1
-            else:
-                sorted_list.append(right[j])
-                j += 1
+        for i in range(3, n + 1):
+            ways[i] = ways[i - 1] + ways[i - 2]
 
-        sorted_list.extend(left[i:])
-        sorted_list.extend(right[j:])
-        
-        return sorted_list
-
-    # Merge and sort the two unsorted lists
-    sorted_result = merge_and_sort(list1, list2)
-
-    return sorted_result
+        return ways[n]
 
 # Example usage:
-# result = merge_list([1, 5, 3, 7], [6, 2, 4])
-# print(result)  # This should output [1, 2, 3, 4, 5, 6, 7]
+# result = my_steps(2)
+# print(result)  # This should output 2
 
-# result = merge_list([1, 5, 3, 2], [2, 1, 4, 5, 6])
-# print(result)  # This should output [1, 1, 2, 2, 3, 4, 5, 5, 6]
-
-# result = merge_list([1, 5, 9], [])
-# print(result)  # This should output [1, 5, 9]
-
+# result = my_steps(3)
+# print(result)  # This should output 3
