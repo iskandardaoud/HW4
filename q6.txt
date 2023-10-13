@@ -1,0 +1,12 @@
+Q1. No, the change inside "increment_int_a" does not change the variable "a" after the
+function call because integers are immutable in Python. Modifying an integer inside a function
+only affects the local variable, not the original variable.
+
+Q2. Yes, the change inside "increment_int_b" does change the variable "b" after the function
+call because dictionaries are mutable in Python. Modifying a dictionary inside a function affects the
+original dictionary since dictionaries are passed by reference.
+
+Q3. The difference in behavior between the two functions is due to the mutability of the data types
+involved. Immutable types, like integers, cannot be modified in place, so changes inside a
+function do not affect the original variable. Mutable types, like dictionaries, can be modified in place,
+so changes inside a function affect the original variable.
