@@ -1,9 +1,9 @@
 # bug1.pyfrom shape import Shape
-from shape import Shape
-from circle import Circle
+from shape import shape
+from circle import circle
 
 def main():
-    c = Circle(1, 2, 3)
+    c = circle(1, 2, 3)
     print(c.draw())
 
 if __name__ == '__main__':
