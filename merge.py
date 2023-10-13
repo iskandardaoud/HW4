@@ -3,23 +3,27 @@ def merge_list(list1, list2):
     if not (isinstance(list1, list) and isinstance(list2, list)):
         raise TypeError("Both inputs must be lists")
 
+    # Function to merge two lists and sort them
+    def merge_sort(left, right):
+        merged = []
+        i = j = 0
+
+        while i < len(left) and j < len(right):
+            if left[i] < right[j]:
+                merged.append(left[i])
+                i += 1
+            else:
+                merged.append(right[j])
+                j += 1
+
+        merged.extend(left[i:])
+        merged.extend(right[j:])
+        return merged
+
     # Merge and sort the two unsorted lists
-    merged = []
-    i = j = 0
+    sorted_result = merge_sort(list1, list2)
 
-    while i < len(list1) and j < len(list2):
-        if list1[i] < list2[j]:
-            merged.append(list1[i])
-            i += 1
-        else:
-            merged.append(list2[j])
-            j += 1
-
-    # Append any remaining elements from the two lists
-    merged.extend(list1[i:])
-    merged.extend(list2[j:])
-
-    return merged
+    return sorted_result
 
 # Example usage:
 # result = merge_list([1, 5, 3, 7], [6, 2, 4])
@@ -30,4 +34,3 @@ def merge_list(list1, list2):
 
 # result = merge_list([1, 5, 9], [])
 # print(result)  # This should output [1, 5, 9]
-
