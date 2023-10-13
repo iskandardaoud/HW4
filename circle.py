@@ -10,17 +10,16 @@ class Circle(Base):
 
     def draw(self):
         return f"""
-        ({self.x}, {self.y})
-        {self.size}
-        , - ~ ~ ~ - ,
-        , ' ' ,
-        , ,
-        , ,
-        , ,
-        , ,
-        , ,
-        , ,
-        , ,
-        , , '
-        ' - , _ _ _ , '
-        """
+({self.x}, {self.y})\n{self.size}
+         , - ~ ~ ~ - ,
+     , '               ' ,
+   ,                       ,
+  ,                         ,
+ ,                           ,
+ ,                           ,
+ ,                           ,
+  ,                         ,
+   ,                       ,
+     ,                  , '
+       ' - , _ _ _ ,  '
+               """
