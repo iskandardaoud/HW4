@@ -1,0 +1,3 @@
+Code reuse and sharing are made possible through inheritance when new classes are created that take on the traits and behaviors of older classes. By reducing code duplication, you can maintain and expand your codebase more easily.
+
+Specialization and Hierarchy: You may organize classes into a hierarchy by using inheritance, with specialized classes descended from more generic ones. This hierarchy helps depict complicated systems with many levels of specialization by representing "is-a" links.
